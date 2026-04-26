@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship Deck 2026 | Heartfulness Bengaluru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,300;1,6..12,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --cream:     #faf7f2;
+            --cream-2:   #f2ece2;
+            --white:     #ffffff;
+            --navy:      #0f1e2d;
+            --navy-mid:  #1a334d;
+            --gold:      #b8903e;
+            --gold-lt:   #d4ae6a;
+            --gold-pale: #f0e2c0;
+            --sage:      #6a8c7e;
+            --ink:       #1a2630;
+            --ink-mid:   #38505e;
+            --ink-lt:    #6a8090;
+        }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body {
+            font-family:'Nunito Sans','Gotham','Century Gothic','Futura',sans-serif;
+            background:var(--cream); color:var(--ink);
+            scroll-behavior:smooth; overflow-x:hidden;
+        }
+
+        /* ── FIXED LOGO ── */
+        .fixed-logo {
+            position:fixed; top:20px; right:32px;
+            width:140px; height:auto; z-index:9999;
+            object-fit:contain;
+            filter:drop-shadow(0 2px 12px rgba(0,0,0,0.15));
+        }
+
+        /* ── DECORATIVE ── */
+        .gold-rule {
+            display:block; width:110px; height:1px;
+            background:linear-gradient(90deg,transparent,var(--gold),transparent);
+            margin:0 auto;
+        }
+        .gold-rule-full {
+            display:block; height:1px;
+            background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-lt) 50%,var(--gold) 70%,transparent);
+        }
+        .label-tag {
+            font-size:.65rem; font-weight:800; letter-spacing:.28em;
+            text-transform:uppercase; color:var(--gold); display:block;
+        }
+
+        /* ── CARDS ── */
+        .card-white {
+            background:var(--white); border:1px solid rgba(184,144,62,0.18);
+            border-radius:20px; padding:44px 40px;
+            box-shadow:0 6px 36px rgba(15,30,45,0.06);
+        }
+        .card-cream {
+            background:var(--cream-2); border:1px solid rgba(184,144,62,0.20);
+            border-radius:16px; padding:30px 28px;
+        }
+
+        /* ── LAYOUT ── */
+        .slide { min-height:100vh; padding:100px 8%; display:flex; flex-direction:column; justify-content:center; position:relative; }
+        .wrap  { max-width:1300px; margin:0 auto; width:100%; }
+
+        /* ── TYPE SCALE ── */
+        .t-hero    { font-family:'Cormorant Garamond',serif; font-size:clamp(5rem,11vw,13rem); font-weight:700; line-height:.92; letter-spacing:.04em; text-transform:uppercase; }
+        .t-display { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,7vw,8rem);  font-weight:700; line-height:1;    text-transform:uppercase; }
+        .t-section { font-size:clamp(2.4rem,5vw,6rem); font-weight:900; line-height:.95; letter-spacing:-.01em; text-transform:uppercase; }
+        .t-body    { font-size:1.25rem; line-height:1.92; font-weight:400; color:var(--ink-mid); }
+        .t-body-lg { font-size:1.42rem; line-height:1.88; font-weight:400; color:var(--ink-mid); }
+        .label-tag { font-size:.75rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); display:block; }
+
+        /* ══════════════════════════════════════
+           SLIDE 1 - TITLE (clean, no rings/borders)
+        ══════════════════════════════════════ */
+        .s-title {
+            min-height:100vh; display:flex; flex-direction:column;
+            align-items:center; justify-content:center; text-align:center;
+            background:var(--cream); position:relative; overflow:hidden;
+        }
+        /* Single, very subtle warm glow - no rings, no lines */
+        .s-title::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:radial-gradient(ellipse 80% 60% at 50% 55%, rgba(184,144,62,0.08) 0%, transparent 68%);
+        }
+        /* Corner ornaments only */
+        .orn { position:absolute; width:90px; height:90px; opacity:.32; }
+        .orn-tl{top:32px;left:32px;}
+        .orn-tr{top:32px;right:32px;transform:scaleX(-1);}
+        .orn-bl{bottom:32px;left:32px;transform:scaleY(-1);}
+        .orn-br{bottom:32px;right:32px;transform:scale(-1,-1);}
+
+        /* ══════════════════════════════════════
+           SLIDE 2 - HPL HERO (LIGHT)
+        ══════════════════════════════════════ */
+        .s-hpl {
+            background:var(--cream); overflow:hidden;
+        }
+        .s-hpl::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:
+                radial-gradient(ellipse 70% 55% at 10% 90%, rgba(184,144,62,0.09) 0%, transparent 58%),
+                radial-gradient(ellipse 50% 40% at 90% 10%, rgba(15,30,45,0.04) 0%,  transparent 55%);
+        }
+        .hpl-stat-box {
+            background:var(--white); border:1px solid rgba(184,144,62,0.22);
+            border-radius:18px; padding:32px 16px; text-align:center;
+            box-shadow:0 4px 20px rgba(15,30,45,0.05);
+        }
+        /* Casino number slot */
+        .slot-wrap {
+            height:5.4rem; overflow:hidden; position:relative; display:inline-block;
+        }
+        .slot-reel {
+            display:flex; flex-direction:column;
+            transition:none; /* JS controls transform */
+        }
+        .slot-digit {
+            font-family:'Cormorant Garamond',serif;
+            font-size:4.5rem; font-weight:700;
+            color:var(--gold); line-height:1;
+            height:5.4rem; display:flex; align-items:center; justify-content:center;
+        }
+        /* light slide uses navy label text */
+        .hpl-stat-l { font-size:.75rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-lt); margin-top:7px; }
+        .hpl-divider { width:90px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:16px auto; }
+        .hpl-quote {
+            background:var(--cream-2); border:1px solid rgba(184,144,62,0.28);
+            border-radius:20px; padding:38px 40px;
+        }
+        /* "presents" italic line */
+        .hpl-presents {
+            font-family:'Cormorant Garamond',serif; font-style:italic;
+            font-size:1.5rem; letter-spacing:.22em; color:var(--gold);
+        }
+
+        /* ══════════════════════════════════════
+           SLIDE 3 - HPL GALLERY
+        ══════════════════════════════════════ */
+        .s-gallery { background:#0c1a26; padding:52px 0; overflow:hidden; }
+
+        /* ══════════════════════════════════════
+           SLIDE 4 - GROWTH (light)
+        ══════════════════════════════════════ */
+        .s-growth { background:var(--cream-2); overflow:hidden; }
+        .s-growth::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:
+                radial-gradient(ellipse 60% 50% at 5% 95%,  rgba(184,144,62,0.09) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 35% at 95% 5%,   rgba(15,30,45,0.04)  0%, transparent 55%),
+                repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(184,144,62,0.03) 80px);
+        }
+        .g-stat {
+            background:var(--white); border:1px solid rgba(184,144,62,0.22);
+            border-radius:18px; padding:36px 20px; text-align:center;
+            transition:transform .3s ease,box-shadow .3s ease;
+            position:relative; z-index:2;
+            box-shadow:0 4px 20px rgba(15,30,45,0.05);
+        }
+        .g-stat:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(15,30,45,0.08); }
+        /* slot digit reused inside g-stat */
+        .g-stat .slot-digit { color:var(--gold); }
+        .g-lbl { font-size:.75rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-lt); margin-top:8px; }
+
+        /* ══════════════════════════════════════
+           SLIDE 5 - WHY PARTNER
+        ══════════════════════════════════════ */
+        .s-why { background:var(--white); }
+        .why-card {
+            background:var(--cream); border:1px solid rgba(184,144,62,0.18);
+            border-radius:18px; padding:34px 30px;
+            transition:transform .3s ease,box-shadow .3s ease,background .3s ease;
+        }
+        .why-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(15,30,45,0.07); background:var(--white); }
+        .why-card strong { color:var(--navy); font-weight:700; display:block; font-size:1.08rem; margin:6px 0 10px; }
+
+        /* ══════════════════════════════════════
+           SLIDE 6 - TIERS
+        ══════════════════════════════════════ */
+        .s-tiers { background:var(--cream-2); }
+        .tier-card {
+            background:var(--white); border:1px solid rgba(184,144,62,0.16);
+            border-radius:20px; padding:44px 34px;
+            box-shadow:0 4px 24px rgba(15,30,45,0.05);
+            transition:transform .3s ease,box-shadow .3s ease;
+            display:flex; flex-direction:column;
+        }
+        .tier-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(15,30,45,0.10); }
+        .tier-name  { font-size:1.55rem; font-weight:900; text-transform:uppercase; letter-spacing:.02em; margin-bottom:4px; line-height:1.1; }
+        .tier-price { font-size:.85rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-lt); margin-bottom:20px; display:block; }
+        .tier-badge { display:inline-block; font-size:.6rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; padding:4px 12px; border-radius:40px; margin-bottom:20px; }
+        .tier-section-lbl { font-size:.62rem; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin:18px 0 8px; display:block; }
+        .tier-card ul { list-style:none; padding:0; flex:1; }
+        .tier-card ul li { font-size:1.12rem; line-height:1.75; padding:10px 0; border-bottom:1px solid rgba(15,30,45,0.06); color:var(--ink-mid); }
+        .tier-card ul li:last-child { border-bottom:none; }
+        .tier-card ul li::before { content:'- '; opacity:.22; font-weight:700; }
+        .inkind-tag { font-size:.62rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--sage); border:1px solid var(--sage); border-radius:4px; padding:2px 8px; display:inline-block; margin-bottom:16px; }
+
+        /* ══════════════════════════════════════
+           SLIDE 7 - ABOUT HFN
+        ══════════════════════════════════════ */
+        .s-about { background:var(--white); position:relative; }
+        .s-about::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:linear-gradient(rgba(250,247,242,0.93),rgba(250,247,242,0.93)),
+                        url('images/photo13.jpeg') center/cover no-repeat fixed;
+        }
+        .stat-num   { font-family:'Cormorant Garamond',serif; font-size:3.8rem; font-weight:700; color:var(--navy); line-height:1; }
+        .stat-label { font-size:.75rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-lt); margin-top:5px; }
+        /* About slide slot digits - navy */
+        .s-about .slot-digit { color:var(--navy); font-size:3.8rem; height:4.6rem; }
+        .s-about .slot-wrap  { height:4.6rem; }
+
+        /* ══════════════════════════════════════
+           SLIDE 8 - HFN BLR + INITIATIVES
+        ══════════════════════════════════════ */
+        .s-blr { background:var(--cream); }
+        .init-box {
+            background:var(--white); border:1px solid rgba(184,144,62,0.18);
+            border-left:4px solid var(--gold); border-radius:0 14px 14px 0;
+            padding:26px 28px; transition:transform .3s ease,box-shadow .3s ease;
+        }
+        .init-box:hover { transform:translateX(4px); box-shadow:0 8px 28px rgba(15,30,45,0.07); }
+        .init-box-title { font-size:.78rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; margin-bottom:10px; }
+        .init-box p { font-size:1.12rem; line-height:1.82; color:var(--ink-mid); }
+
+        /* ══════════════════════════════════════
+           MARQUEE
+        ══════════════════════════════════════ */
+        .s-marquee-centres { padding:52px 0; background:var(--cream-2); border-top:1px solid rgba(184,144,62,0.15); border-bottom:1px solid rgba(184,144,62,0.15); }
+        @keyframes scrollL { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .marquee { overflow:hidden; white-space:nowrap; width:100%; }
+        .marquee-track { display:flex; width:max-content; animation:scrollL 42s linear infinite; }
+        .m-img { width:400px; height:265px; object-fit:cover; margin:0 10px; border-radius:14px; flex-shrink:0; }
+        .hpl-gallery-dark .m-img { height:255px; width:370px; opacity:.87; transition:opacity .3s; }
+        .hpl-gallery-dark .m-img:hover { opacity:1; }
+
+        /* ══════════════════════════════════════
+           THANK YOU
+        ══════════════════════════════════════ */
+        .s-ty {
+            min-height:100vh; display:flex; flex-direction:column;
+            align-items:center; justify-content:center; text-align:center;
+            background:linear-gradient(145deg,var(--navy) 0%,#0c1e30 50%,var(--navy) 100%);
+            position:relative; overflow:hidden;
+        }
+        .s-ty::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background:
+                radial-gradient(ellipse 70% 60% at 30% 70%, rgba(184,144,62,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 70% 30%, rgba(184,144,62,0.06) 0%, transparent 60%),
+                repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.011) 60px);
+        }
+        @keyframes tyReveal {
+            0%  {opacity:0;transform:translateY(70px) scale(.94);filter:blur(12px);}
+            60% {opacity:1;transform:translateY(-8px) scale(1.01);filter:blur(0);}
+            100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+        }
+        @keyframes shimmer {
+            0%,100%{background-position:-200% center;}
+            50%    {background-position: 200% center;}
+        }
+        .ty-text {
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(5rem,14vw,16rem); font-weight:700;
+            text-transform:uppercase; letter-spacing:-.02em; line-height:.9;
+            background:linear-gradient(135deg,#fff 20%,var(--gold-lt) 50%,#fff 80%);
+            background-size:200% auto;
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            animation:tyReveal 1.4s cubic-bezier(.16,1,.3,1) forwards,shimmer 4s ease-in-out 1.4s infinite;
+            opacity:0;
+        }
+        .ty-line { font-size:1rem; letter-spacing:.26em; text-transform:uppercase; color:rgba(255,255,255,0.42); font-weight:700; position:relative; z-index:2; }
+        .ty-line a { color:var(--gold-lt); text-decoration:none; transition:color .2s; }
+        .ty-line a:hover { color:#fff; }
+
+        /* ══════════════════════════════════════
+           CASINO SLOT - shared animation
+        ══════════════════════════════════════ */
+        @keyframes slotSpin {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(var(--slot-end)); }
+        }
+        .slot-reel.spinning {
+            animation: slotSpin var(--slot-dur, 1.4s) cubic-bezier(0.12, 0, 0.15, 1) forwards;
+        }
+
+        /* MOBILE portrait */
+        @media (max-width: 767px) {
+            .fixed-logo { width:72px; top:12px; right:14px; }
+            .slide { padding:72px 5% 56px; min-height:auto; }
+
+            /* TITLE SLIDE - fix overflow */
+            .t-hero { font-size:clamp(2.2rem,11vw,4rem) !important; line-height:1; letter-spacing:.01em; }
+            .t-hero span { font-size:clamp(1.3rem,6.5vw,2rem) !important; letter-spacing:.1em !important; }
+
+            .orn { width:44px; height:44px; }
+            .orn-tl{top:12px;left:12px;} .orn-tr{top:12px;right:12px;}
+            .orn-bl{bottom:12px;left:12px;} .orn-br{bottom:12px;right:12px;}
+
+            .t-display { font-size:clamp(1.8rem,9vw,3.2rem) !important; }
+            .t-section { font-size:clamp(1.5rem,7.5vw,2.6rem) !important; line-height:1.05; }
+            .t-body    { font-size:1rem !important; line-height:1.78; }
+            .t-body-lg { font-size:1.06rem !important; line-height:1.76; }
+
+            /* HPL slide */
+            .hpl-presents { font-size:1.1rem; }
+            .slot-wrap  { height:3.5rem !important; }
+            .slot-digit { font-size:2.7rem !important; height:3.5rem !important; }
+            .hpl-stat-box { padding:16px 8px; }
+            .hpl-quote { padding:20px 18px; }
+            .hpl-quote p { font-size:1.12rem !important; }
+
+            /* Growth stats */
+            .g-stat { padding:20px 10px; }
+            .g-lbl  { font-size:.65rem; }
+
+            /* Why / Tiers cards */
+            .why-card { padding:22px 18px; }
+            .tier-card { padding:26px 18px; }
+            .tier-name { font-size:1.18rem; }
+            .tier-card ul li { font-size:.96rem; padding:7px 0; }
+
+            /* About / BLR cards */
+            .card-white { padding:22px 16px; }
+            .card-cream { padding:16px 14px; }
+            .s-about .slot-digit { font-size:2.5rem !important; height:3.2rem !important; }
+            .s-about .slot-wrap  { height:3.2rem !important; }
+            .init-box { padding:16px 14px; }
+            .init-box p { font-size:.97rem; }
+
+            /* Marquee */
+            .m-img { width:230px; height:154px; }
+            .hpl-gallery-dark .m-img { width:210px; height:142px; }
+
+            /* THANK YOU */
+            .ty-text { font-size:clamp(3.6rem,17vw,6.5rem) !important; }
+            .s-ty > div { padding:0 5% !important; }
+        }
+
+        /* Tailwind responsive overrides for mobile */
+        @media (max-width: 767px) {
+            .grid { grid-template-columns:1fr !important; }
+            .grid.grid-cols-2 { grid-template-columns:repeat(2,1fr) !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/logo1.png" alt="Heartfulness Logo" class="fixed-logo">
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 1 - TITLE (clean)
+    ══════════════════════════════════════════ -->
+    <section class="s-title">
+        <!-- Corner ornaments only - no rings, no border lines -->
+        <div class="orn orn-tl"><svg viewBox="0 0 90 90" fill="none"><path d="M5 85V5h80" stroke="#b8903e" stroke-width="1.5"/><path d="M5 47Q5 5 47 5" stroke="#b8903e" stroke-width=".75" opacity=".4"/><circle cx="5" cy="5" r="3" fill="#b8903e" opacity=".6"/></svg></div>
+        <div class="orn orn-tr"><svg viewBox="0 0 90 90" fill="none"><path d="M5 85V5h80" stroke="#b8903e" stroke-width="1.5"/><path d="M5 47Q5 5 47 5" stroke="#b8903e" stroke-width=".75" opacity=".4"/><circle cx="5" cy="5" r="3" fill="#b8903e" opacity=".6"/></svg></div>
+        <div class="orn orn-bl"><svg viewBox="0 0 90 90" fill="none"><path d="M5 85V5h80" stroke="#b8903e" stroke-width="1.5"/><path d="M5 47Q5 5 47 5" stroke="#b8903e" stroke-width=".75" opacity=".4"/><circle cx="5" cy="5" r="3" fill="#b8903e" opacity=".6"/></svg></div>
+        <div class="orn orn-br"><svg viewBox="0 0 90 90" fill="none"><path d="M5 85V5h80" stroke="#b8903e" stroke-width="1.5"/><path d="M5 47Q5 5 47 5" stroke="#b8903e" stroke-width=".75" opacity=".4"/><circle cx="5" cy="5" r="3" fill="#b8903e" opacity=".6"/></svg></div>
+
+        <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:22px;" data-aos="fade-up" data-aos-duration="1400">
+            <p class="label-tag" style="letter-spacing:.55em;">Sponsorship Deck &middot; 2026</p>
+            <span class="gold-rule"></span>
+            <h1 class="t-hero" style="color:var(--navy);">
+                Heartfulness
+                <span style="display:block;font-style:italic;font-weight:300;font-size:.52em;letter-spacing:.16em;color:var(--gold);">Bengaluru</span>
+            </h1>
+            <span class="gold-rule"></span>
+            <p class="label-tag" style="color:#a09080;letter-spacing:.35em;font-size:.62rem;">Where Purpose Meets Community</p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 2 - HPL HERO (light)
+    ══════════════════════════════════════════ -->
+    <section class="slide s-hpl">
+        <div class="wrap" style="position:relative;z-index:2;">
+
+            <!-- Logo → presents → divider → title -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:52px;" data-aos="fade-down">
+                <img src="images/logo3.png" alt="HPL Logo" style="width:160px;">
+                <p class="hpl-presents">presents</p>
+                <div class="hpl-divider"></div>
+                <h2 class="t-display" style="color:var(--navy);text-align:center;">
+                    Heartfulness <span style="color:var(--gold);">Premier</span> League
+                </h2>
+                <div class="hpl-divider"></div>
+                <p class="label-tag" style="color:var(--ink-lt);font-size:.62rem;">3rd Edition &middot; RRCC Grounds, Srinivasapura</p>
+            </div>
+
+            <!-- Stats row - casino slots -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14" data-aos="fade-up" data-aos-delay="100">
+                <div class="hpl-stat-box">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="3" data-suffix="rd" data-color="gold"></div></div>
+                    <p class="hpl-stat-l">Edition</p>
+                </div>
+                <div class="hpl-stat-box">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="80" data-suffix="+" data-color="gold"></div></div>
+                    <p class="hpl-stat-l">Participants</p>
+                </div>
+                <div class="hpl-stat-box">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="7" data-suffix="" data-color="gold"></div></div>
+                    <p class="hpl-stat-l">Teams · 2 Categories</p>
+                </div>
+                <div class="hpl-stat-box">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="100" data-suffix="%" data-color="gold"></div></div>
+                    <p class="hpl-stat-l">Proceeds Donated</p>
+                </div>
+            </div>
+
+            <!-- Body + Quote -->
+            <div class="grid lg:grid-cols-2 gap-10" data-aos="fade-up" data-aos-delay="200">
+                <!-- Left col -->
+                <div style="font-size:1.2rem;line-height:1.88;color:var(--ink-mid);">
+                    <p style="margin-bottom:20px;">The <strong style="color:var(--navy);">Heartfulness Premier League</strong> is the flagship event of the Heartfulness Sports League - Heartfulness Bengaluru's dedicated platform for sport-driven community engagement, bringing practitioners together in the spirit of sportsmanship, camaraderie, and conscious competition.</p>
+                    <p style="margin-bottom:26px;">Now in its third edition, the tournament saw over 80 participants compete across two age categories at RRCC Grounds, Srinivasapura. Every rupee raised goes directly to the Heartfulness Institute.</p>
+
+                </div>
+                <!-- Right col - quote box sized to fit content only, not stretched -->
+                <div style="display:flex;align-items:flex-start;">
+                    <div class="hpl-quote" style="align-self:flex-start;width:100%;">
+                        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;font-weight:300;color:var(--navy);line-height:1.65;margin-bottom:22px;">"Sport, when played with heart, is a powerful vehicle for community building and social impact."</p>
+                        <p class="label-tag">100% of proceeds donated directly to the Heartfulness Institute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 3 - HPL GALLERY
+    ══════════════════════════════════════════ -->
+    <section class="s-gallery hpl-gallery-dark">
+        <p class="label-tag text-center mb-7" style="color:rgba(255,255,255,.26);" data-aos="fade-up">HPL Gallery</p>
+        <div class="marquee">
+            <div class="marquee-track">
+                <img src="images/photo2.jpeg" class="m-img"><img src="images/photo3.jpeg" class="m-img">
+                <img src="images/photo21.jpeg" class="m-img"><img src="images/photo5.jpeg" class="m-img">
+                <img src="images/photo6.jpeg" class="m-img"><img src="images/photo7.jpeg" class="m-img">
+                <img src="images/photo8.jpeg" class="m-img"><img src="images/photo9.jpeg" class="m-img">
+                <img src="images/photo10.jpeg" class="m-img"><img src="images/photo11.jpeg" class="m-img">
+                <img src="images/photo12.jpeg" class="m-img">
+                <img src="images/photo2.jpeg" class="m-img"><img src="images/photo3.jpeg" class="m-img">
+                <img src="images/photo21.jpeg" class="m-img"><img src="images/photo5.jpeg" class="m-img">
+                <img src="images/photo6.jpeg" class="m-img"><img src="images/photo7.jpeg" class="m-img">
+                <img src="images/photo8.jpeg" class="m-img"><img src="images/photo9.jpeg" class="m-img">
+                <img src="images/photo10.jpeg" class="m-img"><img src="images/photo11.jpeg" class="m-img">
+                <img src="images/photo12.jpeg" class="m-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 4 - GROWTH IN NUMBERS
+    ══════════════════════════════════════════ -->
+    <section class="slide s-growth">
+        <div class="wrap">
+            <p class="label-tag mb-5" data-aos="fade-up">Year on Year</p>
+            <h2 class="t-display" style="color:var(--navy);margin-bottom:8px;" data-aos="fade-up" data-aos-delay="60">
+                Growing<br><span style="color:var(--gold);">Every Edition</span>
+            </h2>
+            <span class="gold-rule-full" style="margin:28px 0 50px;" data-aos="fade-up" data-aos-delay="90"></span>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mb-14">
+                <div class="g-stat" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="3" data-suffix="" data-color="gold"></div></div>
+                    <p class="g-lbl">Editions and Counting</p>
+                </div>
+                <div class="g-stat" data-aos="zoom-in" data-aos-delay="140">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="80" data-suffix="+" data-color="gold"></div></div>
+                    <p class="g-lbl">Participants in Edition 2</p>
+                </div>
+                <div class="g-stat" data-aos="zoom-in" data-aos-delay="180">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="100" data-suffix="%" data-color="gold"></div></div>
+                    <p class="g-lbl">Growth in Registrations</p>
+                </div>
+                <div class="g-stat" data-aos="zoom-in" data-aos-delay="220">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="7" data-suffix="" data-color="gold"></div></div>
+                    <p class="g-lbl">Teams Across 2 Age Categories</p>
+                </div>
+                <div class="g-stat" data-aos="zoom-in" data-aos-delay="260">
+                    <div class="slot-wrap"><div class="slot-reel" data-target="100" data-suffix="%" data-color="gold"></div></div>
+                    <p class="g-lbl">Proceeds Donated</p>
+                </div>
+            </div>
+            <p class="text-center label-tag" style="color:var(--ink-lt);letter-spacing:.18em;position:relative;z-index:2;" data-aos="fade-up" data-aos-delay="300">
+                More players. More heart. More impact - with every edition.
+            </p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 5 - WHY PARTNER
+    ══════════════════════════════════════════ -->
+    <section class="slide s-why">
+        <div class="wrap">
+            <p class="label-tag mb-4" data-aos="fade-up">The Opportunity</p>
+            <h2 class="t-section" style="color:var(--gold);margin-bottom:16px;" data-aos="fade-up" data-aos-delay="50">Why Partner With Us?</h2>
+            <p class="t-body-lg mb-14 max-w-4xl" style="font-style:italic;color:var(--ink-lt);" data-aos="fade-up" data-aos-delay="100">
+                Partnering with Heartfulness Bengaluru connects your brand with a movement backed by 80+ years of institutional credibility, UN affiliation, and NITI Aayog registration - reaching a values-driven community of over 10,000 practitioners across the city.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="label-tag" style="margin-bottom:8px;">01 - CSR &amp; ESG</span>
+                    <strong>Strong CSR and ESG Alignment</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Our initiatives span environment, wellness, and education - qualifying under Schedule VII CSR categories. Heartfulness is NITI Aayog registered with 80G/12A tax exemption, making every contribution directly deductible.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="140">
+                    <span class="label-tag" style="margin-bottom:8px;">02 - Brand Visibility</span>
+                    <strong>High-Impact Brand Presence</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Your brand appears across jerseys, stumps, boundary boards, stage backdrops, certificates, merchandise, and all digital creatives - with dedicated social media campaigns on Instagram, YouTube, and emailers reaching Heartfulness Bengaluru's community.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="180">
+                    <span class="label-tag" style="margin-bottom:8px;">03 - Engaged Audience</span>
+                    <strong>Access to a Values-Driven Community</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Reach professionals, families, and youth from across Bengaluru - a demographic that is health-conscious, community-oriented, and highly engaged. This is not a passive audience; these are people who show up.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="220">
+                    <span class="label-tag" style="margin-bottom:8px;">04 - Employee Engagement</span>
+                    <strong>Activate Your Own Team</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Invite your employees to participate, volunteer, or attend - creating a meaningful touchpoint around wellness, sportsmanship, and community purpose. A genuinely differentiated team engagement opportunity.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="260">
+                    <span class="label-tag" style="margin-bottom:8px;">05 - Global Credibility</span>
+                    <strong>Backed by a World-Class Institution</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Heartfulness is a UN-affiliated global movement in 160 countries, a Guinness World Record holder, and home to the world's largest meditation centre at Kanha Shanti Vanam. Your association carries institutional weight.</p>
+                </div>
+                <div class="why-card" style="border-color:rgba(15,30,45,0.18);background:rgba(15,30,45,0.04);" data-aos="fade-up" data-aos-delay="300">
+                    <span class="label-tag" style="color:var(--navy);margin-bottom:8px;">06 - Zero Overhead</span>
+                    <strong style="color:var(--navy);">100% Impact, Fully Documented</strong>
+                    <p class="t-body" style="font-size:1.02rem;">Every rupee contributed goes directly to programme delivery - all events are volunteer-run with zero administrative overhead. Full impact documentation provided for your internal CSR reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 6 - TIERS
+    ══════════════════════════════════════════ -->
+    <section class="slide s-tiers">
+        <div class="wrap">
+            <p class="label-tag text-center mb-4" data-aos="fade-up">Partnership Tiers</p>
+            <h2 class="t-section text-center mb-8" style="color:var(--navy);" data-aos="fade-up" data-aos-delay="50">How to Contribute</h2>
+            <p class="t-body text-center mb-14 max-w-3xl mx-auto" style="color:var(--ink-lt);" data-aos="fade-up" data-aos-delay="80">
+                Choose a sponsorship tier that reflects your organisation's vision. All tiers include documented impact reporting and direct association with a purpose-led, community-driven event.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- 1. Presenting Partner -->
+                <div class="tier-card" style="border-top:5px solid var(--navy);" data-aos="fade-up" data-aos-delay="100">
+                    <p class="tier-name" style="color:var(--navy);">Presenting Partner</p>
+                    <span class="tier-price">&#8377;40,000</span>
+                    <ul>
+                        <li>"Presented by" association across all event communications</li>
+                        <li>Prime logo visibility across all event collateral</li>
+                        <li>Premium branding at venue - maximum on-ground presence</li>
+                        <li>Dedicated sponsor stall / activation space at the event</li>
+                        <li>Category exclusivity - no competing brand in your segment</li>
+                        <li>Recognition during prize distribution ceremony</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Impact Partner -->
+                <div class="tier-card" style="border-top:5px solid var(--gold);" data-aos="fade-up" data-aos-delay="140">
+                    <p class="tier-name" style="color:var(--gold);">Impact Partner</p>
+                    <span class="tier-price">Minimum &#8377;15,000</span>
+                    <ul>
+                        <li>Prominent logo placement across event collateral</li>
+                        <li>Venue branding and event-wide visibility</li>
+                        <li>Product display or brand activation opportunity</li>
+                        <li>Social media mentions across Heartfulness Bengaluru channels</li>
+                        <li>Partner acknowledgements during the event</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Match & Awards Partner -->
+                <div class="tier-card" style="border-top:5px solid var(--sage);" data-aos="fade-up" data-aos-delay="180">
+                    <p class="tier-name" style="color:var(--sage);">Match &amp; Awards Partner</p>
+                    <span class="inkind-tag">In-Kind Sponsorship</span>
+                    <p class="t-body" style="font-size:1rem;margin-bottom:4px;color:var(--ink-mid);">Support the competitive side of the tournament through sponsorship of:</p>
+                    <span class="tier-section-lbl">What You Sponsor</span>
+                    <ul style="margin-bottom:0;">
+                        <li>Ground / pitch booking</li>
+                        <li>Umpires and match operations</li>
+                        <li>Cricket equipment - balls, stumps, etc.</li>
+                        <li>Trophies and prizes</li>
+                        <li>Individual awards - MVP, Best Batter, Best Bowler, etc.</li>
+                    </ul>
+                    <span class="tier-section-lbl">What You Receive</span>
+                    <ul>
+                        <li>Recognition as Official Match &amp; Awards Partner</li>
+                        <li>Branding during awards presentation</li>
+                        <li>Logo visibility on all tournament-related assets</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Hospitality & Team Support Partner -->
+                <div class="tier-card" style="border-top:5px solid #9080a0;" data-aos="fade-up" data-aos-delay="220">
+                    <p class="tier-name" style="color:#7a6088;">Hospitality &amp; Team Support Partner</p>
+                    <span class="inkind-tag" style="color:#9080a0;border-color:#9080a0;">In-Kind Sponsorship</span>
+                    <p class="t-body" style="font-size:1rem;margin-bottom:4px;color:var(--ink-mid);">Support participant experience through sponsorship of:</p>
+                    <span class="tier-section-lbl">What You Sponsor</span>
+                    <ul>
+                        <li>Food and beverages for players and staff</li>
+                        <li>Refreshments and hydration throughout the day</li>
+                        <li>Team jerseys and player apparel</li>
+                        <li>Event setup - tents, seating, sound, logistics</li>
+                    </ul>
+                    <span class="tier-section-lbl">What You Receive</span>
+                    <ul>
+                        <li>Recognition as Official Hospitality &amp; Team Support Partner</li>
+                        <li>Branding in hospitality and team zones</li>
+                        <li>Partner acknowledgements during the event</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BRAND IMPRESSIONS - before about HFN
+    ══════════════════════════════════════════ -->
+    <section style="padding:110px 8%;background:var(--cream-2);border-top:1px solid rgba(184,144,62,0.12);">
+        <div class="wrap">
+            <p class="label-tag mb-4 text-center" data-aos="fade-up">Audience &amp; Reach</p>
+            <h2 class="t-section text-center mb-6" style="color:var(--navy);" data-aos="fade-up" data-aos-delay="50">Brand Impressions</h2>
+            <p class="t-body-lg text-center mb-16 max-w-3xl mx-auto" style="color:var(--ink-lt);font-style:italic;" data-aos="fade-up" data-aos-delay="80">
+                A glimpse of the energy, community, and scale that your brand will be seen alongside.
+            </p>
+            <!-- Three images, each respecting its native aspect ratio -->
+            <div class="s-brand-grid" style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:20px;align-items:start;" data-aos="fade-up" data-aos-delay="120">
+
+                <!-- photo19: portrait 1080×1350 → ~4:5 -->
+                <div style="border-radius:18px;overflow:hidden;box-shadow:0 10px 48px rgba(15,30,45,0.12);">
+                    <img src="images/photo19.png" alt="Event impression"
+                         style="width:100%;display:block;aspect-ratio:4/5;object-fit:cover;transition:transform .6s ease;"
+                         onmouseover="this.style.transform='scale(1.03)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <!-- photo20: landscape 1600×820 → ~2:1 - centre, bigger -->
+                <div style="border-radius:18px;overflow:hidden;box-shadow:0 10px 48px rgba(15,30,45,0.12);">
+                    <img src="images/photo20.jpeg" alt="Event impression"
+                         style="width:100%;display:block;aspect-ratio:2/1;object-fit:cover;transition:transform .6s ease;"
+                         onmouseover="this.style.transform='scale(1.03)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <!-- photo4: portrait 4284×5712 → ~3:4 -->
+                <div style="border-radius:18px;overflow:hidden;box-shadow:0 10px 48px rgba(15,30,45,0.12);">
+                    <img src="images/photo4.jpeg" alt="Event impression"
+                         style="width:100%;display:block;aspect-ratio:3/4;object-fit:cover;transition:transform .6s ease;"
+                         onmouseover="this.style.transform='scale(1.03)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 7 - ABOUT HEARTFULNESS
+    ══════════════════════════════════════════ -->
+    <section class="slide s-about" style="align-items:center;text-align:center;">
+        <div class="wrap" style="position:relative;z-index:2;" data-aos="fade-up">
+            <p class="label-tag mb-4">Global Movement</p>
+            <h2 class="t-section" style="color:var(--navy);margin-bottom:50px;">About Heartfulness</h2>
+            <div class="card-white text-left mb-10">
+                <p class="t-body-lg mb-10">
+                    Heartfulness Institute is a global non-profit dedicated to heart-based meditation, guided by <strong style="color:var(--navy);">Daaji, Kamlesh D. Patel</strong> - the fourth Guide of the Heartfulness lineage. From a handful of seekers to millions of practitioners across 160 countries, Heartfulness is one of the world's fastest-growing wellness movements.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t pt-10" style="border-color:rgba(184,144,62,0.15);">
+                    <div data-aos="zoom-in" data-aos-delay="100">
+                        <div class="slot-wrap" style="height:4.6rem;"><div class="slot-reel" data-target="160" data-suffix="+" data-color="navy"></div></div>
+                        <p class="stat-label">Countries</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="160">
+                        <div class="slot-wrap" style="height:4.6rem;"><div class="slot-reel" data-target="2500" data-suffix="+" data-color="navy"></div></div>
+                        <p class="stat-label">Centres &amp; Ashrams</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="220">
+                        <div class="slot-wrap" style="height:4.6rem;"><div class="slot-reel" data-target="280" data-suffix="+" data-color="navy"></div></div>
+                        <p class="stat-label">Training Centres</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="280">
+                        <div class="slot-wrap" style="height:4.6rem;"><div class="slot-reel" data-target="16000" data-suffix="+" data-color="navy"></div></div>
+                        <p class="stat-label">Volunteer Trainers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-left" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-cream">
+                    <p class="label-tag mb-3">Global Headquarters</p>
+                    <p class="t-body" style="font-size:1rem;">Kanha Shanti Vanam, Hyderabad - the <strong style="color:var(--navy);">world's largest meditation centre</strong>, welcoming thousands daily.</p>
+                </div>
+                <div class="card-cream">
+                    <p class="label-tag mb-3">Guinness World Record</p>
+                    <p class="t-body" style="font-size:1rem;">Holder of the Guinness World Record for the <strong style="color:var(--navy);">most viewers of a guided meditation live stream</strong> on YouTube - 35 lakh concurrent viewers.</p>
+                </div>
+                <div class="card-cream">
+                    <p class="label-tag mb-3">Institutional Credentials</p>
+                    <p class="t-body" style="font-size:1rem;">UN-affiliated. NITI Aayog registered. 80G &amp; 12A tax-exempt. 80+ years of unbroken lineage in heart-based practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 8 - HFN BENGALURU + INITIATIVES
+    ══════════════════════════════════════════ -->
+    <section class="slide s-blr">
+        <div class="wrap" data-aos="fade-up">
+            <p class="label-tag mb-4">Our Chapter</p>
+            <h2 class="t-section" style="color:var(--sage);margin-bottom:52px;">Heartfulness Bengaluru</h2>
+            <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+                <!-- Left: intro + centres -->
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <p class="t-body-lg mb-6">One of the most vibrant chapters of the global Heartfulness movement, serving Bengaluru's seekers, professionals, and families for over <strong style="color:var(--navy);">50 years</strong>.</p>
+                    <p class="t-body mb-8">In a city defined by relentless pace, Heartfulness Bengaluru offers a rare sanctuary - a space to pause, breathe, and reconnect. With over <strong style="color:var(--navy);font-size:1.22rem;">10,000 practitioners</strong> across five key centres, our community continues to grow.</p>
+                    <div class="card-white">
+                        <p class="label-tag mb-6">Our Five Key Centres</p>
+                        <ul style="list-style:none;padding:0;">
+                            <li style="padding:16px 0;border-bottom:1px solid rgba(184,144,62,0.12);"><span style="font-size:1.12rem;font-weight:700;color:var(--navy);display:block;">Banashankari Heartfulness Centre</span><span style="font-size:.9rem;color:var(--ink-lt);">Banashankari Stage 1</span></li>
+                            <li style="padding:16px 0;border-bottom:1px solid rgba(184,144,62,0.12);"><span style="font-size:1.12rem;font-weight:700;color:var(--navy);display:block;">Paramdham Heartfulness Centre</span><span style="font-size:.9rem;color:var(--ink-lt);">Harlur Road</span></li>
+                            <li style="padding:16px 0;border-bottom:1px solid rgba(184,144,62,0.12);"><span style="font-size:1.12rem;font-weight:700;color:var(--navy);display:block;">Zonal Heartfulness Centre</span><span style="font-size:.9rem;color:var(--ink-lt);">Jalahalli</span></li>
+                            <li style="padding:16px 0;border-bottom:1px solid rgba(184,144,62,0.12);"><span style="font-size:1.12rem;font-weight:700;color:var(--navy);display:block;">CREST Heartfulness Centre</span><span style="font-size:.9rem;color:var(--ink-lt);">Kanakapura Road</span></li>
+                            <li style="padding:16px 0;"><span style="font-size:1.12rem;font-weight:700;color:var(--navy);display:block;">Happy Hearts Meditation Centre</span><span style="font-size:.9rem;color:var(--ink-lt);">Whitefield</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: initiative text boxes (no emojis) -->
+                <div style="display:flex;flex-direction:column;gap:14px;" data-aos="fade-left" data-aos-delay="200">
+                    <p class="label-tag mb-2">Our Initiatives</p>
+
+                    <div class="init-box" style="border-left-color:#c08040;">
+                        <p class="init-box-title" style="color:#c08040;">Forests by Heartfulness</p>
+                        <p>Regular plantation drives across Bengaluru, including the flagship <strong style="color:var(--navy);">Green Heartfulness Run</strong> at Cubbon Park - thousands of trees planted annually through community-led reforestation efforts in partnership with local authorities.</p>
+                    </div>
+
+                    <div class="init-box" style="border-left-color:var(--navy-mid);">
+                        <p class="init-box-title" style="color:var(--navy-mid);">Heartfulness Sports League</p>
+                        <p>A dedicated multi-sport platform anchored by the <strong style="color:var(--navy);">Heartfulness Premier League (HPL)</strong> cricket tournament - building community and camaraderie across all age groups, with 100% of proceeds going to the Heartfulness Institute.</p>
+                    </div>
+
+                    <div class="init-box" style="border-left-color:var(--gold);">
+                        <p class="init-box-title" style="color:#9a7020;">Youth Engagement</p>
+                        <p>The <strong style="color:var(--navy);">Bengaluru Youth Seminar</strong> alongside a year-round calendar of city-wide events and collaborations with the <strong style="color:var(--navy);">Ministry of Youth Affairs and Sports</strong> - nurturing the next generation of conscious leaders.</p>
+                    </div>
+
+                    <div class="init-box" style="border-left-color:var(--sage);">
+                        <p class="init-box-title" style="color:var(--sage);">University &amp; Corporate Connect</p>
+                        <p>Tailored Heartfulness wellness programmes delivered directly into Bengaluru's leading universities and corporate campuses - helping organisations build genuine cultures of wellbeing from the inside out.</p>
+                    </div>
+
+                    <div class="init-box" style="border-left-color:#9080a0;">
+                        <p class="init-box-title" style="color:#7a6088;">Outstation Immersion Programme</p>
+                        <p>Two-day residential retreats where Bengaluru youth travel together to Heartfulness centres in neighbouring towns - deepening their practice, forging real community bonds, and stepping away from the pace of city life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CENTRES MARQUEE
+    ══════════════════════════════════════════ -->
+    <section class="s-marquee-centres">
+        <p class="label-tag text-center mb-7" data-aos="fade-up">Heartfulness Meditation Centres in Bengaluru</p>
+        <div class="marquee">
+            <div class="marquee-track">
+                <img src="images/photo14.jpg" class="m-img"><img src="images/photo15.jpg" class="m-img">
+                <img src="images/photo16.jpg" class="m-img"><img src="images/photo17.jpg" class="m-img"><img src="images/photo18.JPG" class="m-img">
+                <img src="images/photo14.jpg" class="m-img"><img src="images/photo15.jpg" class="m-img">
+                <img src="images/photo16.jpg" class="m-img"><img src="images/photo17.jpg" class="m-img"><img src="images/photo18.JPG" class="m-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         THANK YOU
+    ══════════════════════════════════════════ -->
+    <footer class="s-ty">
+        <div style="position:relative;z-index:2;width:100%;padding:0 8%;display:flex;flex-direction:column;align-items:center;">
+            <div class="ty-text" id="tyText">Thank You</div>
+            <span class="gold-rule" style="margin:40px auto 36px;"></span>
+
+            <!-- Contact: flex column, email → instagram → phones side by side -->
+            <div style="display:flex;flex-direction:column;gap:14px;width:100%;max-width:560px;margin-bottom:36px;">
+
+                <!-- Email -->
+                <a href="mailto:heartfulness.blr@gmail.com" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(184,144,62,0.25);border-radius:16px;padding:18px 22px;transition:background .2s;min-width:0;" onmouseover="this.style.background='rgba(255,255,255,0.10)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                        <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,144,62,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4ae6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </div>
+                        <div style="min-width:0;flex:1;">
+                            <p style="font-size:.6rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Email</p>
+                            <p style="font-size:.95rem;font-weight:600;color:rgba(255,255,255,0.85);word-break:break-all;">heartfulness.blr@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/heartfulness.bengaluru" target="_blank" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="380">
+                    <div style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(184,144,62,0.25);border-radius:16px;padding:18px 22px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.10)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                        <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,144,62,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4ae6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="#d4ae6a"/></svg>
+                        </div>
+                        <div>
+                            <p style="font-size:.6rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Instagram</p>
+                            <p style="font-size:.95rem;font-weight:600;color:rgba(255,255,255,0.85);">@heartfulness.bengaluru</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Phones: side by side on desktop, stacked on mobile via flex-wrap -->
+                <div style="display:flex;gap:14px;flex-wrap:wrap;" data-aos="fade-up" data-aos-delay="460">
+
+                    <a href="tel:+917305038485" style="text-decoration:none;flex:1;min-width:180px;">
+                        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(184,144,62,0.25);border-radius:16px;padding:18px 18px;transition:background .2s;height:100%;" onmouseover="this.style.background='rgba(255,255,255,0.10)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,144,62,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4ae6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <p style="font-size:.6rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Anoop</p>
+                                <p style="font-size:.92rem;font-weight:600;color:rgba(255,255,255,0.85);">+91 73050 38485</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tel:+919490363213" style="text-decoration:none;flex:1;min-width:180px;">
+                        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(184,144,62,0.25);border-radius:16px;padding:18px 18px;transition:background .2s;height:100%;" onmouseover="this.style.background='rgba(255,255,255,0.10)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,144,62,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4ae6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <p style="font-size:.6rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Sreedhar</p>
+                                <p style="font-size:.92rem;font-weight:600;color:rgba(255,255,255,0.85);">+91 94903 63213</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <p style="font-size:.68rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,0.22);position:relative;z-index:2;">Heartfulness Bengaluru, India</p>
+            <img src="images/logo2.png" alt="Logo" style="width:78px;margin:48px auto 0;opacity:.11;filter:invert(1);display:block;">
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1100, once: true, easing: 'ease-out-cubic' });
+
+        /* ── THANK YOU REVEAL ── */
+        const tyText = document.getElementById('tyText');
+        if (tyText) {
+            tyText.style.animationPlayState = 'paused';
+            new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
+            }, { threshold: 0.3 }).observe(tyText);
+        }
+
+        /* ══════════════════════════════════════════════════════
+           CASINO SLOT COUNTER
+           Each .slot-reel has:
+             data-target  = final number (integer)
+             data-suffix  = e.g. "+" or "%" or "rd"
+             data-color   = "gold" | "navy"
+        ══════════════════════════════════════════════════════ */
+        function formatNum(n) {
+            if (n >= 1000) return (n / 1000).toFixed(0) + ',000';
+            return String(n);
+        }
+
+        function buildReel(el) {
+            const target  = parseInt(el.dataset.target, 10);
+            const suffix  = el.dataset.suffix  || '';
+            const color   = el.dataset.color   || 'gold';
+            const fontColor = color === 'navy' ? 'var(--navy)' : 'var(--gold)';
+
+            // Decide font size based on parent .slot-wrap height
+            const wrap    = el.closest('.slot-wrap');
+            const wrapH   = wrap ? wrap.offsetHeight || 86 : 86;
+            const fontSize = wrapH < 60 ? '3.8rem' : '4.5rem';
+
+            // Build fake "spinning" digits: random values then land on target
+            const steps   = 14;  // extra rows to scroll through
+            let html      = '';
+
+            // Random runup digits
+            for (let i = 0; i < steps; i++) {
+                const fake = Math.floor(Math.random() * (target * 1.5 + 20));
+                html += `<div class="slot-digit" style="font-size:${fontSize};height:${wrapH}px;color:${fontColor};">${formatNum(fake)}${suffix}</div>`;
+            }
+            // Final target
+            html += `<div class="slot-digit" style="font-size:${fontSize};height:${wrapH}px;color:${fontColor};">${formatNum(target)}${suffix}</div>`;
+
+            el.innerHTML = html;
+
+            // Total scroll distance = steps * row height (land on last row)
+            const totalH  = steps * wrapH;
+            el.style.setProperty('--slot-end', `-${totalH}px`);
+            el.style.setProperty('--slot-dur', `${1.2 + steps * 0.06}s`);
+            el.dataset.built = 'true';
+        }
+
+        function fireReel(el) {
+            if (el.dataset.built !== 'true') buildReel(el);
+            el.classList.remove('spinning');
+            void el.offsetWidth; // reflow
+            el.classList.add('spinning');
+        }
+
+        // Observe each reel and trigger when visible
+        const reelObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    // Small stagger so nearby reels don't all fire simultaneously
+                    const delay = parseInt(el.closest('[data-aos-delay]')?.dataset.aosDelay || '0', 10);
+                    setTimeout(() => fireReel(el), delay + 200);
+                    reelObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.slot-reel').forEach(el => {
+            // Show placeholder until scroll
+            const suffix  = el.dataset.suffix || '';
+            const target  = el.dataset.target  || '0';
+            const color   = el.dataset.color   || 'gold';
+            const fontColor = color === 'navy' ? 'var(--navy)' : 'var(--gold)';
+            const wrap    = el.closest('.slot-wrap');
+            const wrapH   = wrap ? wrap.offsetHeight || 86 : 86;
+            const fontSize = wrapH < 60 ? '3.8rem' : '4.5rem';
+            el.innerHTML  = `<div class="slot-digit" style="font-size:${fontSize};height:${wrapH}px;color:${fontColor};opacity:.25;">0${suffix}</div>`;
+            reelObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
